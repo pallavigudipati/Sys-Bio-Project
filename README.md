@@ -1,11 +1,18 @@
 Sys-Bio-Project
 ===============
 
-Clone the repository:
+###Pre-requisites
+The following utilities need to be installed:
+- Matlab
+- Python
+- Git
+-----------------------------------------------------------------------------------
+
+###Clone the repository
 ```bash
 git clone https://github.com/pallavigudipati/Sys-Bio-Project.git
 ```
-==================================================================== 
+-----------------------------------------------------------------------------------
 
 After you get all the subgraphs from graph-cut and store them in the following form,
 
