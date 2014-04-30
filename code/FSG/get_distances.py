@@ -15,10 +15,7 @@ def distance(orgi, orgj, feat_dict):
 
 
 features_dict = pickle.load(open("features_dict", "rb"))
-print(json.dumps(features_dict, indent = 4))
 for orgi in features_dict.keys():
 	for orgj in features_dict.keys():
 		dist = distance(orgi, orgj, features_dict)
 		print orgi, orgj, dist
-
-#pickle.dump(features_dict, open("features_dict", "wb"))
