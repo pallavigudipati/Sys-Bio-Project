@@ -13,7 +13,7 @@ function [A] = parse_graph( filename, thres)
     if(thres == 1)
         index = (X > 800);
         A = A(index, :);
-        organism_name = sprintf('%s_thresholded_2', organism_name);
+        organism_name = sprintf('%s', organism_name);
     end
     protein_names = [A(:, 1); A(:, 2)];
     protein_names = sort(protein_names);
@@ -26,7 +26,7 @@ function [A] = parse_graph( filename, thres)
     xlabel('Degree');
     ylabel('Number of nodes');
     title(sprintf('%s Degree Distribution', organism_name));
-    saveas(h, sprintf('%s_deg_2.png', organism_name), 'png');
+    saveas(h, sprintf('%s_deg.png', organism_name), 'png');
     
     %% For the weights
     W = cell2mat(A(:, 3));
@@ -37,7 +37,7 @@ function [A] = parse_graph( filename, thres)
     xlabel('Weights');
     ylabel('Number of edges');
     title(sprintf('%s Weight Distribution', organism_name));
-    saveas(h, sprintf('%s_weg_2.png', organism_name), 'png');
+    saveas(h, sprintf('%s_weg.png', organism_name), 'png');
     save(organism_name, 'A');
     close all;
 end

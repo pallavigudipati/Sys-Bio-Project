@@ -26,9 +26,9 @@ All the code is in the code folder.
 
 ###Setup
 ---------
-The Repository has code written to run for the STRING Databases, but the by changing the preprocessing steps approriately
+The Repository has code written to run for the STRING Databases, but the by changing the pre-processing steps appropriately.
 
-The code in the repository can be 
+
 
 After you get all the subgraphs from graph-cut and store them in the following form,
 

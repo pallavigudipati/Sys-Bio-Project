@@ -2,7 +2,7 @@
 
 parse_graph('ecoli.txt', 1);
 
-names = {'ecoli3_thresholded_600.mat', 'ecoli4_thresholded_600.mat'};
+names = {'ecoli.mat', 'ecoli4_thresholded_600.mat'};
 %% Node Label Bins
 number_of_bins = 20;
 convert_mat
