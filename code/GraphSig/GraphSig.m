@@ -1,16 +1,17 @@
-function [ A ] = GraphSig( G, minSupport, maxPvalue, mappingList )
+function [ A ] = GraphSig( G, RWR, minSupport, maxPvalue, mappingList )
 %GraphSig Implementation of the graphsig algorithm
 %   G - Graph Database - list of adjacency matrices
 %%%%%%%%%%%%%%%% change vert_iter etc in format.py
     D = [];
     A = [];
     labels = [];
-    number_of_organisms = size(G, 2);
-    graph_cut_radius = 3;
-    bool_graph_list = cell(number_of_organisms);
+    number_of_organisms = size(G, 1);
+    graph_cut_radius = 2;
+    bool_graph_list = cell(number_of_organisms, 1);
     feature_size = 210;
     for i = 1 : number_of_organisms
-        [node, e] = rwr(cell2mat(G(i)), 15);
+        %[node, e] = rwr(cell2mat(G(i)), 15);
+        e = RWR{i}.e;
         bool_graph_list{i} = double(cell2mat(G(i)) > 0);
         %D = [D; node];
         D = [D; e];
@@ -25,7 +26,7 @@ function [ A ] = GraphSig( G, minSupport, maxPvalue, mappingList )
         mkdir(path);
         Da = D(labels==i, :);
         % minSup should not be between 0 and 1
-        S = FVMine(set_floor(Da), Da, 1, 0.1, ceil(0.0001 * size(Da, 1)), Da);
+        S = FVMine(set_floor(Da), Da, 1, maxPvalue, ceil(minSupport* size(Da, 1)), Da);
         display(size(S));
         % Now we have mined significant features from the graph
         % corresponding to all nodes of type i

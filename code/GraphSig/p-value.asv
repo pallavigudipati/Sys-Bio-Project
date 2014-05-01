@@ -1,0 +1,8 @@
+% Calculates he p-value of the given vector.
+% p = p_value.
+% x = Given vector.
+% mu = Observed support of the vector.
+function [p] = p_value(x, mu)
+    
+end
+

@@ -6,7 +6,6 @@
 %%
 function [A] = FVMine(x, S, b, maxPvalue, minSup, M)
     display(b);
-    % display(x);
     A = [];
     m = size(M, 2); % Total number of edge types. 15 in our case. 
     p = p_value(x, size(S, 1), M);
@@ -17,9 +16,11 @@ function [A] = FVMine(x, S, b, maxPvalue, minSup, M)
         A = x;
     end
     
-    S_new = [];
+    
     for i = b:m
-        % display(i);
+        S_new = [];
+        display(i);
+        display(size(S, 1));
         for j = 1:size(S, 1)
             if S(j,i) > x(i)
                 % display(S(j,i));

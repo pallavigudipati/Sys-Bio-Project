@@ -1,8 +1,4 @@
-%names = {'ecoli_thresholded_2.mat' , 'flatworm_thresholded_2.mat','pencillin_thresholded_2.mat', 'speherobacter_thresholded_2.mat', 'yeast_thresholded_2.mat'};
-names = {'ecoli_thresholded_2.mat'};
-
-number_of_bins = 20;
-
+% Create the mapping for the given graph mat's 
 for i = 1:size(names, 2)
     A = load(cell2mat(names(i)));
     A = A(1).A;
