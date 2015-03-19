@@ -1,19 +1,15 @@
 %% Convert to Adjacency Matrix
-%names = {'ecoli_thresholded_2.mat' , 'flatworm_thresholded_2.mat','pencillin_thresholded_2.mat', 'speherobacter_thresholded_2.mat', 'yeast_thresholded_2.mat'};
-names = {'ecoli_thresholded_2.mat'};
 
-number_of_bins = 20;
-% 
-% symbol_map =  [];
-% counter = 1;
-% for i = 1:1:number_of_bins
-%     for j = i:1:number_of_bins
-%         symbol_map(i, j) = counter;
-%         symbol_map(j, i) = counter;
-%         counter = counter+1;
-%     end
-% end
-% csvwrite('symbol_map.csv', symbol_map);
+symbol_map =  [];
+counter = 1;
+for i = 1:1:number_of_bins
+    for j = i:1:number_of_bins
+        symbol_map(i, j) = counter;
+        symbol_map(j, i) = counter;
+        counter = counter+1;
+    end
+end
+csvwrite('symbol_map.csv', symbol_map);
 
 
 for i = 1:size(names, 2)
